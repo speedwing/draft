@@ -8,9 +8,13 @@ print(f'Executing raffle for event: {draft_file_name}')
 
 with open(draft_file_name) as json_file:
     data = json.load(json_file)
-    entry = data['entries']
-    random.shuffle(entry)
-    random.shuffle(entry)
-    random.shuffle(entry)
+    entries = data['entries']
+    random.shuffle(entries)
+    random.shuffle(entries)
+    random.shuffle(entries)
     print('And the winner is:')
-    print(entry[0])
+    print(entries[0])
+    print('\n\n\n')
+    print('Fallback:')
+    for entry in entries[1:]:
+        print(entry)
